@@ -16,15 +16,18 @@
         {
             try
             {
-                if (File.Exists(FullPath)) sw = File.AppendText(FullPath);
+                if (FileExists()) sw = File.AppendText(FullPath);
                 else sw = new StreamWriter(FullPath);
+
                 sw.WriteLine(person);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.Message);
                 return false;
             }
             sw.Close();
+
             return true;
         }
 
@@ -37,6 +40,11 @@
             sr.Close();
 
             return text;
+        }
+
+        public bool FileExists()
+        {
+            return File.Exists(FullPath);
         }
 
         public override string ToString()
