@@ -1,4 +1,6 @@
-﻿namespace FileManipulation
+﻿using System.Runtime.CompilerServices;
+
+namespace FileManipulation
 {
     internal class FileManipulator
     {
@@ -29,6 +31,20 @@
             sw.Close();
 
             return true;
+        }
+
+        public string[] ReadFileLines(int l)
+        {
+            if (File.Exists(FullPath)) sr = new StreamReader(FullPath);
+            else return null;
+
+            string[] fullText = new string[l];
+
+            for (int i = 0; i < l; i++)
+            {
+                fullText[i] = sr.ReadLine();
+            }
+            return fullText;
         }
 
         public string ReadFile()
