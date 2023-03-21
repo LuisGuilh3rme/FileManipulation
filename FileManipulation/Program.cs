@@ -1,5 +1,4 @@
-﻿using System.Net;
-using FileManipulation;
+﻿using FileManipulation;
 
 internal class Program
 {
@@ -40,6 +39,7 @@ internal class Program
 
                 foreach (string line in rangeText)
                 {
+                    if (line == null) break;
                     Console.WriteLine(line);
                 }
             }
