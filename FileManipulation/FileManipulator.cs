@@ -12,25 +12,12 @@
             FullPath = _path + @"\\Documents\\" + fileName + ".txt";
         }
 
-        public bool CreatePath()
+        public bool WritePerson(Person person)
         {
             try
             {
                 if (File.Exists(FullPath)) sw = File.AppendText(FullPath);
                 else sw = new StreamWriter(FullPath);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception: "+ ex.Message);
-                return false;
-            }
-            return true;
-        }
-
-        public bool WritePerson(Person person)
-        {
-            try
-            {
                 sw.WriteLine(person);
             } catch (Exception ex)
             {

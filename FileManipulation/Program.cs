@@ -6,7 +6,6 @@ internal class Program
     {
         FileManipulator fm = new("backup");
 
-        fm.CreatePath();
         do
         {
             Console.Clear();
