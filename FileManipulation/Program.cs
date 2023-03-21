@@ -4,7 +4,10 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        FileManipulator fm = new("backup");
+        Console.WriteLine("Digite o nome para seu arquivo: ");
+        string fileName = Console.ReadLine();
+
+        FileManipulator fm = new(fileName);
 
         do
         {
