@@ -25,7 +25,8 @@ internal class Program
             if (opt == 4) Environment.Exit(0);
 
             if (opt == 1) Console.WriteLine(fm);
-            else if (opt == 2)
+
+            if (opt == 2)
             {
                 int range = 0;
                 do
@@ -43,17 +44,16 @@ internal class Program
                     Console.WriteLine(line);
                 }
             }
-            else
+            
+            if (opt == 3)
             {
-                do
-                {
-                    Console.Clear();
-                    fm.WritePerson(CreatePerson());
-                    Console.WriteLine("Tecle C para acrescentar mais alguém");
-                } while (Console.ReadLine().ToLower() == "c");
+                Console.Clear();
+                fm.WritePerson(CreatePerson());
             }
-            Console.WriteLine("Digite S para continuar | Qualquer tecla para finalizar: ");
-        } while (Console.ReadLine().ToUpper() == "S");
+
+            Console.WriteLine("Digite ENTER para continuar: ");
+            Console.ReadLine();
+        } while (true);
     }
 
     private static Person CreatePerson()
